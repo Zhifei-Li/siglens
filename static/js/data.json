@@ -1,0 +1,240 @@
+{
+    "span_id": "324b5fc27ebf61e7",
+    "start_time": 1702502582807000000,
+    "end_time": 1702502601351941000,
+    "duration": 18544941056,
+    "service_name": "frontend",
+    "operation_name": "HTTP POST",
+    "children": [
+        {
+            "span_id": "054f8a7277e8173d",
+            "start_time": 1702502601346000000,
+            "end_time": 1702502601353093400,
+            "duration": 7093504,
+            "service_name": "frontend",
+            "operation_name": "grpc.oteldemo.ProductCatalogService/GetProduct",
+            "children": [
+                {
+                    "span_id": "d9bb4cab0403ccd9",
+                    "start_time": 1702502601352657000,
+                    "end_time": 1702502601352840200,
+                    "duration": 183175,
+                    "service_name": "productcatalogservice",
+                    "operation_name": "oteldemo.ProductCatalogService/GetProduct",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "span_id": "9f1672b186649f6d",
+            "start_time": 1702502582807000000,
+            "end_time": 1702502601343595000,
+            "duration": 18536594944,
+            "service_name": "frontend",
+            "operation_name": "grpc.oteldemo.CheckoutService/PlaceOrder",
+            "children": [
+                {
+                    "span_id": "d11213d5f6f8088f",
+                    "start_time": 1702502582824931000,
+                    "end_time": 1702502601340770600,
+                    "duration": 18515839563,
+                    "service_name": "checkoutservice",
+                    "operation_name": "oteldemo.CheckoutService/PlaceOrder",
+                    "children": [
+                        {
+                            "span_id": "21797b31f6243762",
+                            "start_time": 1702502583223883300,
+                            "end_time": 1702502601339511600,
+                            "duration": 18115628265,
+                            "service_name": "checkoutservice",
+                            "operation_name": "orders publish",
+                            "children": [
+                                {
+                                    "span_id": "0e5b862b0d407a72",
+                                    "start_time": 1702502583229792000,
+                                    "end_time": 1702502583230008600,
+                                    "duration": 216791,
+                                    "service_name": "frauddetectionservice",
+                                    "operation_name": "orders process",
+                                    "children": null
+                                }
+                            ]
+                        },
+                        {
+                            "span_id": "93b151abe22b33ee",
+                            "start_time": 1702502583186883800,
+                            "end_time": 1702502583207244300,
+                            "duration": 20360415,
+                            "service_name": "checkoutservice",
+                            "operation_name": "oteldemo.CartService/EmptyCart",
+                            "children": [
+                                {
+                                    "span_id": "59cbf88d9b22b571",
+                                    "start_time": 1702502583205148400,
+                                    "end_time": 1702502583206748000,
+                                    "duration": 1599500,
+                                    "service_name": "cartservice",
+                                    "operation_name": "oteldemo.CartService/EmptyCart",
+                                    "children": [
+                                        {
+                                            "span_id": "c9d2b46d3f197743",
+                                            "start_time": 1702502583206006000,
+                                            "end_time": 1702502583206541300,
+                                            "duration": 535200,
+                                            "service_name": "cartservice",
+                                            "operation_name": "EXPIRE",
+                                            "children": null
+                                        },
+                                        {
+                                            "span_id": "e32ea2ab605e078e",
+                                            "start_time": 1702502583205263600,
+                                            "end_time": 1702502583205914600,
+                                            "duration": 651000,
+                                            "service_name": "cartservice",
+                                            "operation_name": "HMSET",
+                                            "children": null
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "span_id": "a329f0aa32e9f35f",
+                            "start_time": 1702502583038389500,
+                            "end_time": 1702502583045291300,
+                            "duration": 6901600,
+                            "service_name": "checkoutservice",
+                            "operation_name": "oteldemo.PaymentService/Charge",
+                            "children": [
+                                {
+                                    "span_id": "0b05753b9396cf99",
+                                    "start_time": 1702502583044000000,
+                                    "end_time": 1702502583044289800,
+                                    "duration": 289792,
+                                    "service_name": "paymentservice",
+                                    "operation_name": "grpc.oteldemo.PaymentService/Charge",
+                                    "children": [
+                                        {
+                                            "span_id": "6a52dbe580642ef3",
+                                            "start_time": 1702502583044000000,
+                                            "end_time": 1702502583044033000,
+                                            "duration": 33024,
+                                            "service_name": "paymentservice",
+                                            "operation_name": "charge",
+                                            "children": null
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "span_id": "5914806280efcc2b",
+                            "start_time": 1702502582837688800,
+                            "end_time": 1702502583037578500,
+                            "duration": 199889798,
+                            "service_name": "checkoutservice",
+                            "operation_name": "prepareOrderItemsAndShippingQuoteFromCart",
+                            "children": [
+                                {
+                                    "span_id": "d6511467febe11df",
+                                    "start_time": 1702502582854327000,
+                                    "end_time": 1702502582896405200,
+                                    "duration": 42078068,
+                                    "service_name": "checkoutservice",
+                                    "operation_name": "oteldemo.ProductCatalogService/GetProduct",
+                                    "children": [
+                                        {
+                                            "span_id": "b5ac4cd3ce58ffe0",
+                                            "start_time": 1702502582894481000,
+                                            "end_time": 1702502582895012400,
+                                            "duration": 531565,
+                                            "service_name": "productcatalogservice",
+                                            "operation_name": "oteldemo.ProductCatalogService/GetProduct",
+                                            "children": null
+                                        }
+                                    ]
+                                },
+                                {
+                                    "span_id": "e9990dbf39dcf742",
+                                    "start_time": 1702502582918012400,
+                                    "end_time": 1702502582925321500,
+                                    "duration": 7308960,
+                                    "service_name": "checkoutservice",
+                                    "operation_name": "oteldemo.CurrencyService/Convert",
+                                    "children": [
+                                        {
+                                            "span_id": "5a813fff71e5a196",
+                                            "start_time": 1702502582924076800,
+                                            "end_time": 1702502582924144600,
+                                            "duration": 67850,
+                                            "service_name": "currencyservice",
+                                            "operation_name": "CurrencyService/Convert",
+                                            "children": null
+                                        }
+                                    ]
+                                },
+                                {
+                                    "span_id": "5f8fb12dcc938305",
+                                    "start_time": 1702502583032157700,
+                                    "end_time": 1702502583037507600,
+                                    "duration": 5349789,
+                                    "service_name": "checkoutservice",
+                                    "operation_name": "oteldemo.CurrencyService/Convert",
+                                    "children": [
+                                        {
+                                            "span_id": "5820740d54658abf",
+                                            "start_time": 1702502583036256000,
+                                            "end_time": 1702502583036320500,
+                                            "duration": 64625,
+                                            "service_name": "currencyservice",
+                                            "operation_name": "CurrencyService/Convert",
+                                            "children": null
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "span_id": "d06813dfec09f933",
+            "start_time": 1702502601346000000,
+            "end_time": 1702502601352509200,
+            "duration": 6509312,
+            "service_name": "frontend",
+            "operation_name": "grpc.oteldemo.ProductCatalogService/GetProduct",
+            "children": [
+                {
+                    "span_id": "30dce8eb93cac0cb",
+                    "start_time": 1702502601349013500,
+                    "end_time": 1702502601349415000,
+                    "duration": 401487,
+                    "service_name": "productcatalogservice",
+                    "operation_name": "oteldemo.ProductCatalogService/GetProduct",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "span_id": "61167bcfd2f1f85c",
+            "start_time": 1702502601345000000,
+            "end_time": 1702502601352510000,
+            "duration": 7510016,
+            "service_name": "frontend",
+            "operation_name": "grpc.oteldemo.ProductCatalogService/GetProduct",
+            "children": [
+                {
+                    "span_id": "adb2e73c6d1462de",
+                    "start_time": 1702502601348798000,
+                    "end_time": 1702502601348828400,
+                    "duration": 30362,
+                    "service_name": "productcatalogservice",
+                    "operation_name": "oteldemo.ProductCatalogService/GetProduct",
+                    "children": null
+                }
+            ]
+        }
+    ]
+}

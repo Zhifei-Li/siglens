@@ -10,6 +10,8 @@ type Trace struct {
 	EndTime         uint64 `json:"end_time"`
 	SpanCount       int    `json:"span_count"`
 	SpanErrorsCount int    `json:"span_errors_count"`
+	ServiceName     string `json:"service_name"`
+	OperationName   string `json:"operation_name"`
 }
 
 type Status_StatusCode string
@@ -56,4 +58,17 @@ type SearchRequestBody struct {
 	StartEpoch    string `json:"startEpoch"`
 	EndEpoch      string `json:"endEpoch"`
 	QueryLanguage string `json:"queryLanguage"`
+	From          int    `json:"from,omitempty"`
+	Size          int    `json:"size,omitempty"`
+}
+
+type GanttChartSpan struct {
+	SpanID        string                 `json:"span_id"`
+	StartTime     uint64                 `json:"start_time"`
+	EndTime       uint64                 `json:"end_time"`
+	Duration      uint64                 `json:"duration"`
+	ServiceName   string                 `json:"service_name"`
+	OperationName string                 `json:"operation_name"`
+	Tags          map[string]interface{} `json:"tags"`
+	Children      []*GanttChartSpan      `json:"children"`
 }
